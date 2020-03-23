@@ -55,8 +55,7 @@ body {
 .new-tweet label {
   font-size: 20px;
 }
-
-#tweet-text {
+.new-tweet textarea {
   /* Override User Agent */
   background-color: inherit;
   color: inherit;
@@ -66,21 +65,21 @@ body {
   border-color: inherit;
   border-image: inherit;
   resize: none;
-
+  
   /* Add Style */
   border-bottom: 3px solid black;
   height: 30px;
   font-size: 18px;
 }
 
-#tweet-text:focus {
+.new-tweet textarea:focus {
   /* Override User Agent */
   outline-offset: 0px;
   outline: -webkit-focus-ring-color auto 0px;
 }
 
 /* New Tweet Footer */
-.new-tweet .new-tweet-footer {
+.new-tweet-footer {
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
