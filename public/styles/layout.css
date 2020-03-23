@@ -18,17 +18,19 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ /* Added Body Style */
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding-top: 120px;
+  padding-top: 120px; /* Offset to keep body content below nav bar on initial load */
 }
 
+/* Main container */
 .container {
   width: 90%;
   margin: 0px 5%;
@@ -38,6 +40,8 @@ body {
   align-items: center;
 }
 
+
+/* New Tweet Section */
 .container .new-tweet {
   width: 100%;
   margin: 20px 0px;
@@ -61,30 +65,25 @@ body {
   border-style: solid;
   border-color: inherit;
   border-image: inherit;
-
-
   resize: none;
 
   /* Add Style */
   border-bottom: 3px solid black;
   height: 30px;
   font-size: 18px;
-
-
 }
 
 #tweet-text:focus {
   /* Override User Agent */
   outline-offset: 0px;
   outline: -webkit-focus-ring-color auto 0px;
-
 }
 
+/* New Tweet Footer */
 .new-tweet .new-tweet-footer {
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .new-tweet-footer button {
