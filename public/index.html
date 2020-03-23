@@ -28,7 +28,7 @@
       <span class='logo'>tweeter</span>
       <span class='newButton'><span class='thick'>Write</span> a new Tweet</span>
     </nav>
-
+    
     <!-- User Header -->
     <header class='userheader'>
       <div>
@@ -41,6 +41,18 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method='POST' action='/tweets'>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </form>
+      </section>
+      
+
+    </main>
   </body>
 </html>
