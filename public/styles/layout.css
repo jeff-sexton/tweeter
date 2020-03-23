@@ -40,6 +40,7 @@ body {
 
 .container .new-tweet {
   width: 100%;
+  margin: 20px 0px;
 }
 
 .new-tweet form {
