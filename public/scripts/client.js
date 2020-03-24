@@ -31,7 +31,20 @@ const data = [
 
 
 $(document).ready(()=> {
+  
   renderTweets(data);
+
+  // Handle new Tweet Submission
+  const $newTweetForm = $('.new-tweet form');
+
+  $newTweetForm.submit((event) => {
+    event.preventDefault();
+
+    $.ajax('/tweets', {
+      method: 'POST',
+      data: $newTweetForm.serialize(),
+    });
+  });
 });
 
 const createTweetElement = (tweetObj) => {
