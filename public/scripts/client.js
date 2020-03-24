@@ -35,9 +35,7 @@ $(document).ready(()=> {
 });
 
 const createTweetElement = (tweetObj) => {
-  const $newTweet = $('<article>').addClass('tweet');
-  
-  $newTweet.html(
+  return $('<article>').addClass('tweet').html(
     `<header>
       <span class='left'><img src=${tweetObj.user.avatars}><span>${tweetObj.user.name}</span></span> 
       <span class='right'>${tweetObj.user.handle}</span>
@@ -52,8 +50,6 @@ const createTweetElement = (tweetObj) => {
       <span class='right'><img src='/images/flag-variant.svg'><img src='/images/twitter-retweet.svg'><img src='/images/heart.svg'></span>
     </footer>`
   );
-
-  return $newTweet;
 
 };
 
