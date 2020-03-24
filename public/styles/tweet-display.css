@@ -1,0 +1,38 @@
+.tweet {
+  border: 3px solid black;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.tweet:hover {
+  text-shadow: 1px 1px 4px lightblue;
+  box-shadow: 4px 4px 4px lightblue;
+}
+
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet header .left {
+  display: flex;
+  align-items: center;
+}
+
+.tweet header .right {
+  display: flex;
+  align-items: center;
+  color: #f4f1ec;
+}
+
+.tweet header img {
+  height: 50px;
+  margin-right: 5px;
+}
+
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 3px solid black;
+}
+

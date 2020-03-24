@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-display.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -56,38 +57,40 @@
         </form>
       </section>
 
-      <section>
-        <article>
+      <section class='tweet-display'>
+        <article class='tweet'>
           <header>
-            <span>Image Name</span>
-            <span>handle</span>
-
+            <span class='left'><img src="/images/profile-hex.png"><span>Name</span></span> 
+            <span class='right'>handle</span>
           </header>
           
           <main>
             <p>Tweet text that is less than 140 characters looks about like this along with a bunch of extra words to make it long enough. Banana. Apple. 1</p>
+          </main>
 
+          <footer>
+            <span class='left'>10 days ago</span>
+            <span class='right'>logos</span>
+          </footer>
+        </article> 
+
+        <article class='tweet'>
+          <header>
+            <span class='left'><img src="/images/profile-hex.png"><span>Name</span></span> 
+            <span class='right'>handle</span>
+          </header>
+          
+          <main>
+            <p>Tweet text that is less than 140 characters looks about like this along with a bunch of extra words to make it long enough. Banana. Apple. 1</p>
           </main>
 
           <footer>
             <span>10 days ago</span>
             <span>logos</span>
-
           </footer>
         </article> 
-      
+        
       </section>
-
-      <div style='border: 2px solid black; width: 100%; padding: 20px 0px;'>hello</div>
-      <div style='border: 2px solid black; width: 100%; padding: 20px 0px;'>hello</div>
-      <div style='border: 2px solid black; width: 100%; padding: 20px 0px;'>hello</div>
-      <div style='border: 2px solid black; width: 100%; padding: 20px 0px;'>hello</div>
-      <div style='border: 2px solid black; width: 100%; padding: 20px 0px;'>hello</div>
-      <div style='border: 2px solid black; width: 100%; padding: 20px 0px;'>hello</div>
-
- 
-      
-
     </main>
   </body>
 </html>
