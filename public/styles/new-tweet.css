@@ -1,3 +1,21 @@
+/* New Tweet Section */
+.container .new-tweet {
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* New Tweet Footer */
+.new-tweet-footer {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 /* New Tweet Section Style*/
 .new-tweet label {
   font-size: 20px;
@@ -19,7 +37,7 @@
   font-size: 18px;
 }
 
-.new-tweet textarea:focus {
+.new-tweet textarea:focus { /* Possibly remove for accessability */
   /* Override User Agent */
   outline-offset: 0px;
   outline: -webkit-focus-ring-color auto 0px;

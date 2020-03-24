@@ -39,25 +39,3 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-
-/* New Tweet Section */
-.container .new-tweet {
-  width: 100%;
-  margin: 20px 0px;
-}
-
-.new-tweet form {
-  display: flex;
-  flex-direction: column;
-}
-
-/* New Tweet Footer */
-.new-tweet-footer {
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-
-
