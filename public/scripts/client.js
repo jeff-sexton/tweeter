@@ -42,7 +42,7 @@ const createTweetElement = function(tweetObj) {
 
     <footer>
       <span class='left'>${tweetObj.created_at} days ago</span>
-      <span class='right'>logos</span>
+      <span class='right'><img src='/images/flag-variant.svg'><img src='/images/twitter-retweet.svg'><img src='/images/heart.svg'></span>
     </footer>`
   );
 
