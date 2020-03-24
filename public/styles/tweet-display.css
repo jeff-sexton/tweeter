@@ -1,4 +1,8 @@
 /* Tweet Display Section */
+.tweet-display {
+  width: 100%;
+}
+
 .tweet {
   border: 3px solid black;
   margin: 10px 0px;
