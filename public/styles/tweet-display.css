@@ -41,3 +41,12 @@
   border-top: 3px solid black;
 }
 
+.tweet footer .left {
+  display: flex;
+  align-items: center;
+}
+.tweet footer .right {
+  display: flex;
+  align-items: center;
+}
+
