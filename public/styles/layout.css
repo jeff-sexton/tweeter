@@ -68,7 +68,7 @@ body {
   
   /* Add Style */
   border-bottom: 3px solid black;
-  height: 30px;
+  height: 60px;
   font-size: 18px;
 }
 
@@ -85,10 +85,18 @@ body {
   justify-content: space-between;
 }
 
-.new-tweet-footer button {
+.new-tweet-footer {
   font-family: 'Bungee', cursive;
+  font-size: 18px;
+
+}
+
+.new-tweet-footer button {
   background-color: #4056A1;
   color: #FFFFFF;
  }
 
+ .red {
+   color: red;
+ }
 
