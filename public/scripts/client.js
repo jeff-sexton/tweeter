@@ -4,48 +4,25 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
+const getTweetAge = (createdMillis) => {
+  let unit = 'day';
+  let age = (Date.now() - createdMillis) / 86400000; /* milliseconds in a day */
+
+  if (age >= 365) {
+    age = age / 365;
+    unit = 'year';
+
+  } else if (age > 28) {
+    age = age / 28;
+    unit = 'month';
   }
-];
 
+  if (age >= 2) {
+    unit += 's';
+  }
 
-$(document).ready(()=> {
-  
-  renderTweets(data);
-
-  // Handle new Tweet Submission
-  const $newTweetForm = $('.new-tweet form');
-
-  $newTweetForm.submit((event) => {
-    event.preventDefault();
-
-    $.ajax('/tweets', {
-      method: 'POST',
-      data: $newTweetForm.serialize(),
-    });
-  });
-});
+  return `${Math.floor(age)} ${unit} ago`;
+};
 
 const createTweetElement = (tweetObj) => {
   return $('<article>').addClass('tweet').html(
@@ -74,25 +51,30 @@ const renderTweets = (tweets) => {
 
 };
 
-const getTweetAge = (createdMillis) => {
-  let unit = 'day';
-  let age = (Date.now() - createdMillis) / 86400000; /* milliseconds in a day */
-
-  if (age >= 365) {
-    age = age / 365;
-    unit = 'year';
-
-  } else if (age > 28) {
-    age = age / 28;
-    unit = 'month';
-  }
-
-  if (age >= 2) {
-    unit += 's';
-  }
-
-  return `${Math.floor(age)} ${unit} ago`;
+const loadTweets = () => {
+  $.ajax('/tweets', {method: 'GET'})
+    .then((tweets) => {
+      renderTweets(tweets);
+    });
 };
 
+// Execute when document is ready
+$(document).ready(()=> {
 
+  //Load existing tweets
+  loadTweets();
+
+  // Handle new Tweet Submission
+  const $newTweetForm = $('.new-tweet form');
+
+  $newTweetForm.submit((event) => {
+    event.preventDefault();
+
+    $.ajax('/tweets', {
+      method: 'POST',
+      data: $newTweetForm.serialize(),
+    });
+  });
+
+});
 
