@@ -33,7 +33,7 @@ body {
 /* Main container */
 .container {
   width: 90%;
-  margin: 0px 5%;
+  margin: 0px auto;
 
   display: flex;
   flex-direction: column;
