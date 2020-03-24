@@ -1,0 +1,41 @@
+/* New Tweet Section Style*/
+.new-tweet label {
+  font-size: 20px;
+}
+.new-tweet textarea {
+  /* Override User Agent */
+  background-color: inherit;
+  color: inherit;
+  font: inherit;
+  border-width: 0px; 
+  border-style: solid;
+  border-color: inherit;
+  border-image: inherit;
+  resize: none;
+  
+  /* Add Style */
+  border-bottom: 3px solid black;
+  height: 60px;
+  font-size: 18px;
+}
+
+.new-tweet textarea:focus {
+  /* Override User Agent */
+  outline-offset: 0px;
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.new-tweet-footer {
+  font-family: 'Bungee', cursive;
+  font-size: 18px;
+
+}
+
+.new-tweet-footer button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+ }
+
+ .red {
+   color: red;
+ }
