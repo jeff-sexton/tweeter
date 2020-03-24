@@ -34,7 +34,6 @@ $(document).ready(()=> {
   renderTweets(data);
 });
 
-
 const createTweetElement = (tweetObj) => {
   const $newTweet = $('<article>').addClass('tweet');
   
@@ -49,7 +48,7 @@ const createTweetElement = (tweetObj) => {
     </div>
 
     <footer>
-      <span class='left'>${tweetObj.created_at} days ago</span>
+      <span class='left'>${getTweetAge(tweetObj.created_at)}</span>
       <span class='right'><img src='/images/flag-variant.svg'><img src='/images/twitter-retweet.svg'><img src='/images/heart.svg'></span>
     </footer>`
   );
@@ -66,6 +65,25 @@ const renderTweets = (tweets) => {
 
 };
 
+const getTweetAge = (createdMillis) => {
+  let unit = 'day';
+  let age = (Date.now() - createdMillis) / 86400000; /* milliseconds in a day */
+
+  if (age >= 365) {
+    age = age / 365;
+    unit = 'year';
+
+  } else if (age > 28) {
+    age = age / 28;
+    unit = 'month';
+  }
+
+  if (age >= 2) {
+    unit += 's';
+  }
+
+  return `${Math.floor(age)} ${unit} ago`;
+};
 
 
 
