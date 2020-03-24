@@ -9,13 +9,6 @@
   flex-direction: column;
 }
 
-/* New Tweet Footer */
-.new-tweet-footer {
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
 /* New Tweet Section Style*/
 .new-tweet label {
   font-size: 20px;
@@ -44,9 +37,12 @@
 }
 
 .new-tweet-footer {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+
   font-family: 'Bungee', cursive;
   font-size: 18px;
-
 }
 
 .new-tweet-footer button {
