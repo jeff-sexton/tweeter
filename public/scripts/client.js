@@ -47,7 +47,7 @@ const createTweetElement = (tweetObj) => {
 
     <footer>
       <span class='left'>${getTweetAge(tweetObj.created_at)}</span>
-      <span class='right'><img src='/images/flag-variant.svg'><img src='/images/twitter-retweet.svg'><img src='/images/heart.svg'></span>
+      <span class='right'><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
     </footer>`
   );
 

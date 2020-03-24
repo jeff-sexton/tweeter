@@ -54,3 +54,8 @@
   align-items: center;
 }
 
+.tweet footer i {
+  padding: 2px;
+  color: rgba(0, 0, 255, 0.493);
+}
+
