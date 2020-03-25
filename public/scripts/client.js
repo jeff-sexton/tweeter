@@ -77,24 +77,27 @@ $(document).ready(()=> {
   loadTweets();
 
   // Handle new Tweet Submission
-  const $newTweetForm = $('.new-tweet form');
-
-  $newTweetForm.submit(function(event) {
+  $('.new-tweet form').submit(function(event) {
     event.preventDefault();
 
     const tweetText = $(this).children('#tweet-text').val();
+    const $error = $(this).prev('.error');
+
+    $error.slideUp('medium'); // Hide error if already showing
 
     if (tweetText === null || tweetText === '') {
-      alert('Please enter a tweet');
+      $error.children('.error-text').text('Please enter some text in the field below.');
+      $error.slideDown('medium');
       
     } else if (tweetText.length > 140) {
-      alert('Your Tweet is too long!');
+      $error.children('.error-text').text('Your Tweet is too long. Please shorten to 140 characters or less.');
+      $error.slideDown('medium');
 
     } else {
       // submit tweet
       $.ajax('/tweets', {
         method: 'POST',
-        data: $newTweetForm.serialize(),
+        data: this.serialize(),
       })
         .then((res) => {
           renderOneTweet(res.tweet); // Needed to refactor routes/tweets.js to get this to work.
@@ -103,8 +106,6 @@ $(document).ready(()=> {
       // clear text box - happens synchronously after the ajax POST is started
       $(this).children('#tweet-text').val('');
     }
-
-
   });
 
 });
