@@ -27,6 +27,10 @@
  .navbar .newButton{
    font-size: large;
 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
  }
  .navbar .newButton .thick{
    font-weight: bold;
