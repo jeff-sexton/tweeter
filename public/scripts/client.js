@@ -33,29 +33,42 @@ const escape = (string) => {
 };
 
 const createTweetElement = (tweetObj) => {
-  return $('<article>').addClass('tweet').html(
-    `<div class='tweet-header'>
-      <span class='left'><img src=${tweetObj.user.avatars}><span>${escape(tweetObj.user.name)}</span></span> 
-      <span class='right'>${escape(tweetObj.user.handle)}</span>
-    </div>
+  // return $('<article>').addClass('tweet').html(
+  //   `<div class='tweet-header'>
+  //     <span class='left'><img src=${tweetObj.user.avatars}><span>${escape(tweetObj.user.name)}</span></span> 
+  //     <span class='right'>${escape(tweetObj.user.handle)}</span>
+  //   </div>
     
-    <div>
-      <p>${escape(tweetObj.content.text)}</p>
-    </div>
+  //   <div>
+  //     <p>${escape(tweetObj.content.text)}</p>
+  //   </div>
 
-    <div class='tweet-footer'>
-      <span class='left'>${getTweetAge(tweetObj.created_at)}</span>
-      <span class='right'><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
-    </div>`
-  );
+  //   <div class='tweet-footer'>
+  //     <span class='left'>${getTweetAge(tweetObj.created_at)}</span>
+  //     <span class='right'><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
+  //   </div>`
+  // );
 
   // consider not using string literals above and avoid the use the escape function
 
-  // const $article = $('<article>').addClass('tweet')
-  // const $header;
-  // const $footer;
+  const $article = $('<article>').addClass('tweet');
+
+  const $header = $('<header>').addClass('tweet-header').append(
+    $('<span>').addClass('left').append(
+      $('<img>').attr('src', tweetObj.user.avatars),
+      $('<span>').text(tweetObj.user.name)
+    ),
+    $('<span>').addClass('right').text(tweetObj.user.handle)
+  );
+
+  const $content = $('<p>').text(tweetObj.content.text);
+
+  const $footer = $('<footer>').addClass('tweet-footer').append(
+    $('<span>').addClass('left').text(getTweetAge(tweetObj.created_at)),
+    $('<span>').addClass('right').html('<i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i>')
+  );
   
-  // return $($article).appened($header, $footer);
+  return $($article).append($header, $content, $footer);
 
 };
 
@@ -76,7 +89,7 @@ const loadTweets = () => {
     .then((tweets) => {
       renderTweets(tweets);
     });
-    // Add error handling
+  // Add error handling
 };
 
 // Execute when document is ready
@@ -113,7 +126,7 @@ $(document).ready(()=> {
         .then((res) => {
           renderOneTweet(res.tweet); // Needed to refactor routes/tweets.js to get this to work.
           
-          // alt solution (andy): $().empty() to clear all tweets and then recall render all
+          // alt solution (andy): $('.tweet-display').empty() to clear all tweets and then recall loadTweets();
     
           // alt solution (first try): get the entire tweet array but only append the last tweet in the array tweets[tweets.length - 1]
         });
