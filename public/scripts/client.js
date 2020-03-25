@@ -79,7 +79,7 @@ $(document).ready(()=> {
   // Handle new Tweet Submission
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
-
+    
     const tweetText = $(this).children('#tweet-text').val();
     const $error = $(this).prev('.error');
 
@@ -97,7 +97,7 @@ $(document).ready(()=> {
       // submit tweet
       $.ajax('/tweets', {
         method: 'POST',
-        data: this.serialize(),
+        data: $(this).serialize(),
       })
         .then((res) => {
           renderOneTweet(res.tweet); // Needed to refactor routes/tweets.js to get this to work.
