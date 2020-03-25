@@ -60,6 +60,14 @@ const loadTweets = () => {
     });
 };
 
+const loadLastTweet = () => {
+  $.ajax('/tweets', {method: 'GET'})
+    .then((tweets) => {
+      const $newTweet = createTweetElement(tweets[tweets.length - 1]);
+      $('.tweet-display').append($newTweet);
+    });
+};
+
 // Execute when document is ready
 $(document).ready(()=> {
 
@@ -85,7 +93,13 @@ $(document).ready(()=> {
       $.ajax('/tweets', {
         method: 'POST',
         data: $newTweetForm.serialize(),
-      });
+      })
+        .then(() => {
+          //clear text box
+          $(this).children('#tweet-text').val('');
+          loadLastTweet();
+        });
+
     }
 
 
