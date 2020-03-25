@@ -89,7 +89,9 @@ $(document).ready(()=> {
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
 
-    const tweetText = $(this).children('#tweet-text').val();
+
+    const $tweetText = $(this).children('#tweet-text')
+    const tweetText = $($tweetText).val();
     const $error = $(this).prev('.error');
 
     $error.slideUp('medium'); // Hide error if already showing
@@ -118,7 +120,9 @@ $(document).ready(()=> {
       // Add error handling
         
       // clear text box - happens synchronously after the ajax POST is started
-      $(this).children('#tweet-text').val('');
+      $($tweetText).val('');
+      $($tweetText).trigger('input');
+
     }
   });
 
