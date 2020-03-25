@@ -14,47 +14,47 @@
   box-shadow: 4px 4px 4px lightblue;
 }
 
-.tweet header {
+.tweet-header {
   display: flex;
   justify-content: space-between;
 }
 
-.tweet header .left {
+.tweet-header .left {
   display: flex;
   align-items: center;
 }
 
-.tweet header .right {
+.tweet-header .right {
   display: none;
 }
 
-.tweet:hover header .right{
+.tweet:hover .tweet-header .right{
   display: flex;
   align-items: center;
   color: lightblue;
 }
 
-.tweet header img {
+.tweet-header img {
   height: 50px;
   margin-right: 5px;
 }
 
-.tweet footer {
+.tweet-footer {
   display: flex;
   justify-content: space-between;
   border-top: 3px solid black;
 }
 
-.tweet footer .left {
+.tweet-footer .left {
   display: flex;
   align-items: center;
 }
-.tweet footer .right {
+.tweet-footer .right {
   display: flex;
   align-items: center;
 }
 
-.tweet footer i {
+.tweet-footer i {
   padding: 2px;
   color: rgba(0, 0, 255, 0.493);
 }

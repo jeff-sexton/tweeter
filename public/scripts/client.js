@@ -26,19 +26,19 @@ const getTweetAge = (createdMillis) => {
 
 const createTweetElement = (tweetObj) => {
   return $('<article>').addClass('tweet').html(
-    `<header>
+    `<div class='tweet-header'>
       <span class='left'><img src=${tweetObj.user.avatars}><span>${tweetObj.user.name}</span></span> 
       <span class='right'>${tweetObj.user.handle}</span>
-    </header>
+    </div>
     
     <div>
       <p>${tweetObj.content.text}</p>
     </div>
 
-    <footer>
+    <div class='tweet-footer'>
       <span class='left'>${getTweetAge(tweetObj.created_at)}</span>
       <span class='right'><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
-    </footer>`
+    </div>`
   );
 
 };
