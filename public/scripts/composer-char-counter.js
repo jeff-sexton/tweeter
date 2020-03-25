@@ -5,7 +5,8 @@ $(document).ready(() => {
     let charLeft = 140 - $(this).val().length;
 
     /* Update Couter Value */
-    $(this).next('footer').children('.counter').val(charLeft);
+    let $counter = $(this).next('.new-tweet-footer').children('.counter');
+    $counter.val(charLeft);
 
     /* Toggle .red class when too many characters present */
     $($counter).toggleClass('red', charLeft < 0);
