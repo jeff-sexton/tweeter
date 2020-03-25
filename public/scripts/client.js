@@ -17,11 +17,13 @@ const getTweetAge = (createdMillis) => {
     unit = 'month';
   }
 
-  if (age >= 2) {
+  age = Math.floor(age);
+ 
+  if (age !== 1) {
     unit += 's';
   }
 
-  return `${Math.floor(age)} ${unit} ago`;
+  return `${age} ${unit} ago`;
 };
 
 const createTweetElement = (tweetObj) => {
