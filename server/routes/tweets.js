@@ -36,7 +36,8 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.status(201).send();
+        // Old res.status(201).send();
+        res.status(201).send({tweet}); // needed to return the fully formed tweet as a response
       }
     });
   });

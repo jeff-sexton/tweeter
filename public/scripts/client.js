@@ -45,26 +45,22 @@ const createTweetElement = (tweetObj) => {
 
 };
 
+const renderOneTweet = (tweet) => {
+  const $newTweet = createTweetElement(tweet);
+  $('.tweet-display').append($newTweet);
+};
+
 const renderTweets = (tweets) => {
   for (const tweet of tweets) {
-    const $newTweet = createTweetElement(tweet);
-    $('.tweet-display').append($newTweet);
+    renderOneTweet(tweet);
   }
-
+  
 };
 
 const loadTweets = () => {
   $.ajax('/tweets', {method: 'GET'})
     .then((tweets) => {
       renderTweets(tweets);
-    });
-};
-
-const loadLastTweet = () => {
-  $.ajax('/tweets', {method: 'GET'})
-    .then((tweets) => {
-      const $newTweet = createTweetElement(tweets[tweets.length - 1]);
-      $('.tweet-display').append($newTweet);
     });
 };
 
@@ -94,12 +90,12 @@ $(document).ready(()=> {
         method: 'POST',
         data: $newTweetForm.serialize(),
       })
-        .then(() => {
-          //clear text box
-          $(this).children('#tweet-text').val('');
-          loadLastTweet();
+        .then((res) => {
+          renderOneTweet(res.tweet); // Needed to refactor routes/tweets.js to get this to work.
         });
-
+        
+      // clear text box - happens synchronously after the ajax POST is started
+      $(this).children('#tweet-text').val('');
     }
 
 
