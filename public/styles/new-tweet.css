@@ -19,9 +19,6 @@
   padding: 0px 5px;
 }
 
-.hide {
-  display: none;
-}
 
 .new-tweet form {
   display: flex;
@@ -58,7 +55,7 @@
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
-
+  
   font-family: 'Bungee', cursive;
   font-size: 18px;
 }
@@ -66,8 +63,8 @@
 .new-tweet-footer button {
   background-color: #4056A1;
   color: #FFFFFF;
- }
+}
 
- .red {
-   color: red;
- }
+.red {
+  color: red;
+}

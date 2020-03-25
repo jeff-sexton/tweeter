@@ -24,17 +24,17 @@
 
  }
 
- .navbar .newButton{
+.nav-new-button {
    font-size: large;
 
    display: flex;
    flex-direction: column;
    align-items: center;
  }
- .navbar .newButton .thick{
+ .navbar .nav-new-button .thick {
    font-weight: bold;
  }
- .navbar .newButton i {
+ .navbar .nav-new-button i {
    color: red;
  }
 
@@ -53,4 +53,8 @@
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+.hide {
+  display: none;
 }
