@@ -1,12 +1,11 @@
 $(document).ready(() => {
  
-  $('.new-tweet #tweet-text').keyup(function() {
+  $('.new-tweet #tweet-text').on('input', function() {
     /* Calculate characters left from max of 140 */
     let charLeft = 140 - $(this).val().length;
 
     /* Update Couter Value */
-    let $counter = $(this).next('footer').children('.counter');
-    $counter.val(charLeft);
+    $(this).next('footer').children('.counter').val(charLeft);
 
     /* Toggle .red class when too many characters present */
     $($counter).toggleClass('red', charLeft < 0);
