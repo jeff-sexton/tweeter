@@ -69,13 +69,26 @@ $(document).ready(()=> {
   // Handle new Tweet Submission
   const $newTweetForm = $('.new-tweet form');
 
-  $newTweetForm.submit((event) => {
+  $newTweetForm.submit(function(event) {
     event.preventDefault();
 
-    $.ajax('/tweets', {
-      method: 'POST',
-      data: $newTweetForm.serialize(),
-    });
+    const tweetText = $(this).children('#tweet-text').val();
+
+    if (tweetText === null || tweetText === '') {
+      alert('Please enter a tweet');
+      
+    } else if (tweetText.length > 140) {
+      alert('Your Tweet is too long!');
+
+    } else {
+      // submit tweet
+      $.ajax('/tweets', {
+        method: 'POST',
+        data: $newTweetForm.serialize(),
+      });
+    }
+
+
   });
 
 });
