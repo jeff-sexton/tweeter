@@ -1,5 +1,7 @@
 $(document).ready(() => {
  
+  // Origionally keyup; changed to input to capture mouse paste/copy events;
+   
   $('.new-tweet #tweet-text').on('input', function() {
     /* Calculate characters left from max of 140 */
     let charLeft = 140 - $(this).val().length;

@@ -49,6 +49,14 @@ const createTweetElement = (tweetObj) => {
     </div>`
   );
 
+  // consider not using string literals above and avoid the use the escape function
+
+  // const $article = $('<article>').addClass('tweet')
+  // const $header;
+  // const $footer;
+  
+  // return $($article).appened($header, $footer);
+
 };
 
 const renderOneTweet = (tweet) => {
@@ -64,10 +72,11 @@ const renderTweets = (tweets) => {
 };
 
 const loadTweets = () => {
-  $.ajax('/tweets', {method: 'GET'})
+  $.ajax('/tweets', {method: 'GET'})  // consider shorthand method $.getJSON();
     .then((tweets) => {
       renderTweets(tweets);
     });
+    // Add error handling
 };
 
 // Execute when document is ready
@@ -79,7 +88,7 @@ $(document).ready(()=> {
   // Handle new Tweet Submission
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
-    
+
     const tweetText = $(this).children('#tweet-text').val();
     const $error = $(this).prev('.error');
 
@@ -95,13 +104,18 @@ $(document).ready(()=> {
 
     } else {
       // submit tweet
-      $.ajax('/tweets', {
+      $.ajax('/tweets', {   // consider shorthand method $.post();
         method: 'POST',
         data: $(this).serialize(),
       })
         .then((res) => {
           renderOneTweet(res.tweet); // Needed to refactor routes/tweets.js to get this to work.
+          
+          // alt solution (andy): $().empty() to clear all tweets and then recall render all
+    
+          // alt solution (first try): get the entire tweet array but only append the last tweet in the array tweets[tweets.length - 1]
         });
+      // Add error handling
         
       // clear text box - happens synchronously after the ajax POST is started
       $(this).children('#tweet-text').val('');
