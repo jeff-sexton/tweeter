@@ -26,15 +26,21 @@ const getTweetAge = (createdMillis) => {
   return `${age} ${unit} ago`;
 };
 
+const escape = (string) => {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(string));
+  return div.innerHTML;
+};
+
 const createTweetElement = (tweetObj) => {
   return $('<article>').addClass('tweet').html(
     `<div class='tweet-header'>
-      <span class='left'><img src=${tweetObj.user.avatars}><span>${tweetObj.user.name}</span></span> 
-      <span class='right'>${tweetObj.user.handle}</span>
+      <span class='left'><img src=${tweetObj.user.avatars}><span>${escape(tweetObj.user.name)}</span></span> 
+      <span class='right'>${escape(tweetObj.user.handle)}</span>
     </div>
     
     <div>
-      <p>${tweetObj.content.text}</p>
+      <p>${escape(tweetObj.content.text)}</p>
     </div>
 
     <div class='tweet-footer'>
