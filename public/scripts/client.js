@@ -139,5 +139,13 @@ $(document).ready(()=> {
     }
   });
 
+  // Hangle New Tweet Button
+  $('.navbar .newButton').click(() => {
+    $('.new-tweet').slideToggle('medium');
+    $('.new-tweet #tweet-text').focus();
+  }
+
+  );
+
 });
 

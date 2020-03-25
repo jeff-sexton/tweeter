@@ -30,9 +30,10 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-
  }
  .navbar .newButton .thick{
    font-weight: bold;
-
+ }
+ .navbar .newButton i {
+   color: red;
  }

@@ -1,5 +1,6 @@
 /* New Tweet Section */
 .container .new-tweet {
+  display: none;
   width: 100%;
   margin: 20px 0px;
 }
