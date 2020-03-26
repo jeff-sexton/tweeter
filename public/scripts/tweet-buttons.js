@@ -14,6 +14,7 @@ $(document).ready(()=> {
     const windowTop = $(window).scrollTop();
     const tweetDisplayTop = $('.tweet-display').offset().top;
     $('.navbar .nav-new-button').toggleClass('hide', windowTop > tweetDisplayTop - 100);
+    $('.navbar .logo').toggleClass('outline', windowTop > tweetDisplayTop - 100);
     $('.bottom-new-button').toggleClass('hide', windowTop < tweetDisplayTop - 100);
   });
   

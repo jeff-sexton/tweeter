@@ -1,5 +1,6 @@
 .userheader {
-  height: 400px;
+  padding-top: 120px;
+  height: 520px;
 
   display: flex;
   flex-direction: column;

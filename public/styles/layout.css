@@ -27,7 +27,7 @@ body {
  /* Added Body Style */
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding-top: 120px; /* Offset to keep body content below nav bar on initial load */
+  /* padding-top: 120px; Offset to keep body content below nav bar on initial load */
   display: flex;
   flex-direction: column;
 }
