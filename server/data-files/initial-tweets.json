@@ -20,5 +20,38 @@
       "text": "Je pense , donc je suis"
     },
     "created_at": 1461113959088
+  },
+  {
+    "user": {
+      "name": "Christine Parsons",
+      "handle": "@Parsons58",
+      "avatars": "https://i.imgur.com/v0JXau2.png"
+    },
+    "content": {
+      "text": "Hello friends. I miss seeing you in person."
+    },
+    "created_at": 1585264902062
+  },
+  {
+    "user": {
+      "name": "Todd Underwood",
+      "handle": "@Underwood",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+    },
+    "content": {
+      "text": "I'm a little tea pot."
+    },
+    "created_at": 1585264910327
+  },
+  {
+    "user": {
+      "name": "Dennis Birch",
+      "handle": "@MrBirch",
+      "avatars": "https://i.imgur.com/2WZtOD6.png"
+    },
+    "content": {
+      "text": "This project definitely deserves 100%."
+    },
+    "created_at": 1585264946438
   }
 ]
