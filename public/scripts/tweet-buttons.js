@@ -12,10 +12,11 @@ $(document).ready(()=> {
   
   $(window).scroll(() => {
     const windowTop = $(window).scrollTop();
-    const tweetDisplayTop = $('.tweet-display').offset().top;
-    $('.navbar .nav-new-button').toggleClass('hide', windowTop > tweetDisplayTop - 100);
-    $('.navbar .logo').toggleClass('outline', windowTop > tweetDisplayTop - 100);
-    $('.bottom-new-button').toggleClass('hide', windowTop < tweetDisplayTop - 100);
+    const mainContainerTop = $('.container').offset().top;
+
+    $('.navbar .nav-new-button').toggleClass('hide', windowTop > mainContainerTop - 120);
+    $('.navbar .logo').toggleClass('outline', windowTop > mainContainerTop - 120);
+    $('.bottom-new-button').toggleClass('hide', windowTop < mainContainerTop - 120);
   });
   
   $('.bottom-new-button').click(() => {
@@ -25,7 +26,7 @@ $(document).ready(()=> {
       $('.new-tweet').slideToggle('medium');
     }
     
-    $(window).scrollTop($('.new-tweet').offset().top - 150);
+    $(window).scrollTop($('.container').offset().top);
     $('.new-tweet #tweet-text').focus();
     $(window).scroll();
   });
