@@ -11,3 +11,20 @@
   background-image: url("../images/user-header-circles.png");
   color: #FFFFFF;
 }
+
+@media (min-width: 1024px) {
+  .userheader {
+    height: 400px;
+
+    min-width: 400px;
+    width: 30%;
+    padding: 0;
+    margin: 30px 5%;
+
+
+    position: sticky;
+    top: 200px;
+
+  }
+
+}

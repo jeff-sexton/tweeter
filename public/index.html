@@ -45,44 +45,46 @@
       </div>
     </nav>
     
-    <!-- User Header -->
-    <header class='userheader'>
-      <div>
-        <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-        <h2>Your Name</h2>
-      </div>
-    </header>
-
-    
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-          
-        <div class='error'>
-          <i class="fas fa-exclamation"></i>
-          <span class='error-text'>This is an error</span>
-          <i class="fas fa-exclamation"></i>
+    <div class='display-flex'>
+      <!-- User Header -->
+      <header class='userheader'>
+        <div>
+          <img src="/images/profile-hex.png"> 
         </div>
-
-        <form method='POST' action='/tweets'>
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-
-          <div class='new-tweet-footer'>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      <section class='tweet-display'>
-
-      </section>
+        <br>
+        <div>
+          <h2>Your Name</h2>
+        </div>
+      </header>
       
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+            
+          <div class='error'>
+            <i class="fas fa-exclamation"></i>
+            <span class='error-text'>This is an error</span>
+            <i class="fas fa-exclamation"></i>
+          </div>
+  
+          <form method='POST' action='/tweets'>
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+  
+            <div class='new-tweet-footer'>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+  
+        <section class='tweet-display'>
+  
+        </section>
+        
+      </main>
+    </div>
+    
     
     <button class='bottom-new-button hide'>
       <i class="fas fa-angle-double-up"></i>
