@@ -4,29 +4,28 @@
 
 $(document).ready(()=> {
 
-  // Handle New Tweet Button
   $('.navbar .nav-new-button').click(() => {
     $('.new-tweet').slideToggle('medium');
     $('.new-tweet #tweet-text').focus();
   }
   );
   
-  // Handle Page Scroll to switch button display
   $(window).scroll(() => {
     const windowTop = $(window).scrollTop();
     const tweetDisplayTop = $('.tweet-display').offset().top;
-    
     $('.navbar .nav-new-button').toggleClass('hide', windowTop > tweetDisplayTop - 100);
     $('.bottom-new-button').toggleClass('hide', windowTop < tweetDisplayTop - 100);
   });
   
-  // Handle New Tweet Button
   $('.bottom-new-button').click(() => {
-    $('.new-tweet').slideToggle('medium');
+    console.log($('.new-tweet').css('display'));
+    
+    if ($('.new-tweet').css('display') === 'none') {
+      $('.new-tweet').slideToggle('medium');
+    }
+    
+    $(window).scrollTop($('.new-tweet').offset().top - 150);
     $('.new-tweet #tweet-text').focus();
-    $(window).scrollTop($('.tweet-display').offset().top - 100);
     $(window).scroll();
-  }
-  );
-
+  });
 });
