@@ -2,9 +2,7 @@
 /* global document */
 
 $(document).ready(() => {
- 
-  // Origionally keyup; changed to input to capture mouse paste/copy events;
-   
+     
   $('.new-tweet #tweet-text').on('input', function() {
     let charLeft = 140 - $(this).val().length;
 
