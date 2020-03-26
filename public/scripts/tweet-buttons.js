@@ -14,9 +14,10 @@ $(document).ready(()=> {
     const windowTop = $(window).scrollTop();
     const mainContainerTop = $('.container').offset().top;
 
-    $('.navbar .nav-new-button').toggleClass('hide', windowTop > mainContainerTop - 120);
     $('.navbar .logo').toggleClass('outline', windowTop > mainContainerTop - 120);
-    $('.bottom-new-button').toggleClass('hide', windowTop < mainContainerTop - 120);
+
+    $('.navbar .nav-new-button').toggleClass('hide', windowTop > mainContainerTop - 120);
+    $('.bottom-new-button').toggleClass('hide', windowTop < mainContainerTop - 119);
   });
   
   $('.bottom-new-button').click(() => {
@@ -26,7 +27,7 @@ $(document).ready(()=> {
       $('.new-tweet').slideToggle('medium');
     }
     
-    $(window).scrollTop($('.container').offset().top);
+    $(window).scrollTop($('.container').offset().top - 120);
     $('.new-tweet #tweet-text').focus();
     $(window).scroll();
   });
