@@ -65,6 +65,10 @@
   color: #FFFFFF;
 }
 
+.new-tweet-footer button:hover {
+  cursor: pointer;
+}
+
 .red {
   color: red;
 }

@@ -26,11 +26,20 @@
 
 .nav-new-button {
    font-size: large;
+   background: none;
+   border: none;
+   color: inherit;
 
    display: flex;
    flex-direction: column;
    align-items: center;
  }
+
+ .nav-new-button:hover { 
+  cursor: pointer;
+ }
+
+
  .navbar .nav-new-button .thick {
    font-weight: bold;
  }
@@ -74,6 +83,7 @@
    width: 50px;
    border-radius: 50%;
    margin: 1rem;
+   border: none;
 
    position: sticky;
    bottom: 1rem;
@@ -82,6 +92,10 @@
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+.bottom-new-button:hover {
+  cursor: pointer;
 }
 
 .hide {
