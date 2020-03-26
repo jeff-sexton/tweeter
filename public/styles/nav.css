@@ -54,14 +54,14 @@
   }
   40%, 43% {
     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-    transform: translate(0,-5px);
+    transform: translate(0,2.5px);
   }
   70% {
     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-    transform: translate(0,5px);
+    transform: translate(0,7.5px);
   }
   90% {
-    transform: translate(0,11px);
+    transform: translate(0,10px);
   }
 }
 
