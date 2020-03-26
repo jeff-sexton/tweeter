@@ -7,7 +7,7 @@
   border: 3px solid black;
   margin: 10px 0px;
   padding: 10px;
-  /* max-width: 90%; */
+  width: 100%;
 }
 
 .tweet:hover {
@@ -41,7 +41,8 @@
 }
 
 .tweet p {
-  word-wrap: break-word;
+  width: 100%;
+  word-break: break-word;
 }
 
 .tweet-footer {

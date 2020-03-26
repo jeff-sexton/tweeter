@@ -27,12 +27,11 @@ body {
  /* Added Body Style */
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  /* padding-top: 120px; Offset to keep body content below nav bar on initial load */
   display: flex;
   flex-direction: column;
 }
 
-.display-flex {
+.responsive-flex {
   display: flex;
   flex-direction: column;
 
@@ -49,15 +48,14 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .display-flex {
+  .responsive-flex {
     padding-top: 120px;
     flex-direction: row;
     justify-content: space-between;
   }
 
   .container {
-    /* width: 70%; */
+    width: 70%;
     align-items: center;
   }
-
 }
