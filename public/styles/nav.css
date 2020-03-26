@@ -34,9 +34,38 @@
  .navbar .nav-new-button .thick {
    font-weight: bold;
  }
- .navbar .nav-new-button i {
-   color: red;
+.navbar .nav-new-button i {
+
+  color: red;
+  position: relative;
+  transform: translate(0,15px);
+
+
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
  }
+
+ @keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate(0,15px);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate(0,-5px);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate(0,5px);
+  }
+  90% {
+    transform: translate(0,11px);
+  }
+}
+
+
 
  .bottom-new-button {
    background-color: red;

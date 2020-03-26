@@ -4,6 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+/*eslint-env jquery*/
+/* global document */
+/* global window */
+
 const getTweetAge = (createdMillis) => {
   let unit = 'day';
   let age = (Date.now() - createdMillis) / 86400000; /* milliseconds in a day */
@@ -26,16 +30,16 @@ const getTweetAge = (createdMillis) => {
   return `${age} ${unit} ago`;
 };
 
-const escape = (string) => {
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(string));
-  return div.innerHTML;
-};
+// const escape = (string) => {
+//   let div = document.createElement('div');
+//   div.appendChild(document.createTextNode(string));
+//   return div.innerHTML;
+// };
 
 const createTweetElement = (tweetObj) => {
   // return $('<article>').addClass('tweet').html(
   //   `<div class='tweet-header'>
-  //     <span class='left'><img src=${tweetObj.user.avatars}><span>${escape(tweetObj.user.name)}</span></span> 
+  //     <span class='left'><img src=${tweetObj.user.avatars}><span>${escape(tweetObj.user.name)}</span></span>
   //     <span class='right'>${escape(tweetObj.user.handle)}</span>
   //   </div>
     
@@ -103,7 +107,7 @@ $(document).ready(()=> {
     event.preventDefault();
 
 
-    const $tweetText = $(this).children('#tweet-text')
+    const $tweetText = $(this).children('#tweet-text');
     const tweetText = $($tweetText).val();
     const $error = $(this).prev('.error');
 
@@ -139,6 +143,8 @@ $(document).ready(()=> {
     }
   });
 
+  // mmove to differnet JS
+
   // Handle New Tweet Button
   $('.navbar .nav-new-button').click(() => {
     $('.new-tweet').slideToggle('medium');
@@ -149,7 +155,7 @@ $(document).ready(()=> {
   // Handle Page Scroll to switch button display
   $(window).scroll(() => {
     const windowTop = $(window).scrollTop();
-    const tweetDisplayTop =$('.tweet-display').offset().top;
+    const tweetDisplayTop = $('.tweet-display').offset().top;
     
     $('.navbar .nav-new-button').toggleClass('hide', windowTop > tweetDisplayTop - 100);
     $('.bottom-new-button').toggleClass('hide', windowTop < tweetDisplayTop - 100);
@@ -157,7 +163,6 @@ $(document).ready(()=> {
   
   // Handle New Tweet Button
   $('.bottom-new-button').click(() => {
-    console.log('click');
     $('.new-tweet').slideToggle('medium');
     $('.new-tweet #tweet-text').focus();
     $(window).scrollTop($('.tweet-display').offset().top - 100);
