@@ -2,7 +2,7 @@
 /* global document */
 
 $(document).ready(() => {
-     
+
   $('.new-tweet #tweet-text').on('input', function() {
     let charLeft = 140 - $(this).val().length;
 
@@ -11,6 +11,4 @@ $(document).ready(() => {
 
     $($counter).toggleClass('red', charLeft < 0);
   });
-
-
 });
