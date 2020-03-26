@@ -55,8 +55,18 @@
 }
 
 .tweet-footer i {
+  display: none;
   padding: 2px;
   color: #4056A1;
   font-size: .60em;
+}
+
+.tweet-footer i:hover {
+  cursor: pointer;
+}
+
+.tweet:hover .tweet-footer i {
+  display: inherit;
+
 }
 
