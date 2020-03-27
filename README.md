@@ -12,14 +12,6 @@ The project is implemented to be responsive to screen width and has a number of 
 !["Desktop View"](https://raw.githubusercontent.com/jeff-sexton/tweeter/master/docs/Tweeter-Desktop-View.png)
 !["UI Demo"](https://raw.githubusercontent.com/jeff-sexton/tweeter/master/docs/Tweeter-UI.gif)
 
-
-## Getting Started
-
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
-
 ## Dependencies
 
 - Express
