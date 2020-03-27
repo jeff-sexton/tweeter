@@ -1,4 +1,3 @@
-
 /* Navigation Bar CSS */
 .navbar {
   height: 120px;
@@ -28,35 +27,31 @@
  }
 
 .nav-new-button {
-   font-size: large;
-   background: none;
-   border: none;
-   color: inherit;
+  font-size: large;
+  background: none;
+  border: none;
+  color: inherit;
 
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
  }
 
  .nav-new-button:hover { 
   cursor: pointer;
  }
 
-
  .navbar .nav-new-button .thick {
-   font-weight: bold;
+  font-weight: bold;
  }
 .navbar .nav-new-button i {
-
   color: red;
   position: relative;
   transform: translate(0,15px);
 
-
   animation-name: bounce;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-
  }
 
  @keyframes bounce {
@@ -77,24 +72,22 @@
   }
 }
 
-
-
  .bottom-new-button {
-   background-color: red;
-   color: white;
-   height: 50px;
-   width: 50px;
-   border-radius: 50%;
-   margin: 1rem;
-   border: none;
+  background-color: red;
+  color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 1rem;
+  border: none;
 
-   position: sticky;
-   bottom: 1rem;
-   align-self: flex-end;
+  position: sticky;
+  bottom: 1rem;
+  align-self: flex-end;
 
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-new-button:hover {
@@ -108,8 +101,5 @@
 @media (min-width: 1024px) {
   .navbar {
    background-color: #4056A1;
-
   }
-
-
 }

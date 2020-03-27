@@ -57,12 +57,27 @@ const renderTweets = (tweets) => {
   
 };
 
+const showError = (errorString) => {
+  const $error = $('.error');
+  
+  if (errorString) {
+    $('.new-tweet').slideDown('medium');
+  
+    $error.slideDown('medium');
+    $error.children('.error-text').text(errorString);
+  } else {
+    $error.slideUp('medium');
+  }
+};
+
 const loadTweets = () => {
-  $.ajax('/tweets', {method: 'GET'})  // consider shorthand method $.getJSON();
+  $.getJSON('/tweets')
     .then((tweets) => {
       renderTweets(tweets);
+    })
+    .catch(error => {
+      showError(`Status Code: ${error.status} - Message: ${error.statusText}`);
     });
-  // Add error handling
 };
 
 const submitTweet = function(event) {
@@ -70,32 +85,24 @@ const submitTweet = function(event) {
 
   const $tweetText = $(this).children('#tweet-text');
   const tweetText = $($tweetText).val();
-  const $error = $(this).prev('.error');
 
-  $error.slideUp('medium'); // Hide error if already showing
+  showError();
 
   if (tweetText === null || tweetText === '') {
-    $error.children('.error-text').text('Please enter some text in the field below.');
-    $error.slideDown('medium');
+    showError('Please enter some text in the field below.');
     
   } else if (tweetText.length > 140) {
-    $error.children('.error-text').text('Your Tweet is too long. Please shorten to 140 characters or less.');
-    $error.slideDown('medium');
+    showError('Your Tweet is too long. Please shorten to 140 characters or less.');
 
   } else {
     // submit tweet
-    $.ajax('/tweets', {   // consider shorthand method $.post();
-      method: 'POST',
-      data: $(this).serialize(),
-    })
+    $.post('/tweets', $(this).serialize())
       .then((res) => {
         renderOneTweet(res.tweet); // Needed to refactor routes/tweets.js to get this to work.
-        
-        // // alt solution (andy):
-        // $('.tweet-display').empty();
-        // loadTweets();
+      })
+      .catch(error => {
+        showError(`Status Code: ${error.status} - Message: ${error.statusText}`);
       });
-    // Add error handling
       
     // clear text box - happens synchronously after the ajax POST is started
     $($tweetText).val('');
