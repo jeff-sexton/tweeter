@@ -10,7 +10,7 @@ The project is implemented to be responsive to screen width and has a number of 
 
 !["Small Screen View"](https://raw.githubusercontent.com/jeff-sexton/tweeter/master/docs/Tweeter-Small-View.png)
 !["Desktop View"](https://raw.githubusercontent.com/jeff-sexton/tweeter/master/docs/Tweeter-Desktop-View.png)
-![""]()
+!["UI Demo"](https://raw.githubusercontent.com/jeff-sexton/tweeter/master/docs/Tweeter-UI.gif)
 
 
 ## Getting Started
