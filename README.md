@@ -8,11 +8,8 @@ The project is implemented to be responsive to screen width and has a number of 
 
 ## Final Product
 
-![""]()
-![""]()
-![""]()
-![""]()
-![""]()
+!["Small Screen View"](https://raw.githubusercontent.com/jeff-sexton/tweeter/master/docs/Tweeter-Small-View.png)
+!["Desktop View"](https://raw.githubusercontent.com/jeff-sexton/tweeter/master/docs/Tweeter-Desktop-View.png)
 ![""]()
 
 
