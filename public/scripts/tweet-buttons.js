@@ -14,10 +14,10 @@ $(document).ready(()=> {
 
     $('.navbar .logo').toggleClass('outline', windowTop > mainContainerTop - 120);
     $('.navbar .nav-new-button').toggleClass('hide', windowTop > mainContainerTop - 120);
-    $('.bottom-new-button').toggleClass('hide', windowTop < mainContainerTop - 119);
+    $('.scroll-to-top-button').toggleClass('hide', windowTop < mainContainerTop - 119);
   });
   
-  $('.bottom-new-button').click(() => {
+  $('.scroll-to-top-button').click(() => {
     if ($('.new-tweet').css('display') === 'none') {
       $('.new-tweet').slideToggle('medium');
     }

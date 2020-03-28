@@ -70,7 +70,7 @@
   }
 }
 
- .bottom-new-button {
+ .scroll-to-top-button {
   background-color: red;
   color: white;
   height: 50px;
@@ -88,7 +88,7 @@
   align-items: center;
 }
 
-.bottom-new-button:hover {
+.scroll-to-top-button:hover {
   cursor: pointer;
 }
 
