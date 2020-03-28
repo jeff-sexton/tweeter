@@ -1,7 +1,6 @@
 /* Navigation Bar CSS */
 .navbar {
   height: 120px;
-
   position: fixed;
   top: 0;
   right: 0;
@@ -9,7 +8,6 @@
   z-index: 1000;
 
   color: #FFFFFF;
-
   padding: 1.5em;
 
   display: flex;
@@ -19,7 +17,6 @@
 
  .navbar .logo {
   font-family: 'Bungee', cursive;
-
  }
 
  .outline {
@@ -44,6 +41,7 @@
  .navbar .nav-new-button .thick {
   font-weight: bold;
  }
+ 
 .navbar .nav-new-button i {
   color: red;
   position: relative;

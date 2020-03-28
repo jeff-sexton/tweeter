@@ -8,7 +8,6 @@ const getTweetAge = (createdMillis) => {
   if (age >= 365) {
     age = age / 365;
     unit = 'year';
-
   } else if (age > 28) {
     age = age / 28;
     unit = 'month';
@@ -54,7 +53,6 @@ const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     renderOneTweet(tweet);
   }
-  
 };
 
 const showError = (errorString) => {
@@ -90,10 +88,8 @@ const submitTweet = function(event) {
 
   if (tweetText === null || tweetText === '') {
     showError('Please enter some text in the field below.');
-    
   } else if (tweetText.length > 140) {
     showError('Your Tweet is too long. Please shorten to 140 characters or less.');
-
   } else {
     // submit tweet
     $.post('/tweets', $(this).serialize())

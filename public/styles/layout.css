@@ -34,7 +34,6 @@ body {
 .responsive-flex {
   display: flex;
   flex-direction: column;
-
 }
 
 /* Main container */
