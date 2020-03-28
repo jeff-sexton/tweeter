@@ -46,7 +46,7 @@ const createTweetElement = (tweetObj) => {
 
 const renderOneTweet = (tweet) => {
   const $newTweet = createTweetElement(tweet);
-  $('.tweet-display').append($newTweet);
+  $('.tweet-display').prepend($newTweet);
 };
 
 const renderTweets = (tweets) => {
